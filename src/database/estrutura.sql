@@ -6,4 +6,3 @@ create table produtos(
     id int primary key auto_increment,
     nome varchar(50)
 );
-
