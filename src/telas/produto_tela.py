@@ -1,4 +1,6 @@
 import questionary
+from rich.console import Console
+from rich.table import Table
 from src.repositorios import produto_repositorio
 
 
@@ -44,9 +46,20 @@ def __listar_todos():
     if len(produtos) == 0:
         print("Nenhum produto cadastrado!")
 
+    console = Console()    
+    tabela = Table()
+    tabela.add_column("Código", style="blue")
+    tabela.add_column("Nome", style="red")
+
     print("Lista de produtos:")
     for produto in produtos:
-        print("Id:", produto["id"], "Nome:", produto["nome"])
+
+        tabela.add_row(
+            str(produto["id"]),
+            produto["nome"]
+        )
+    console.print(tabela)    
+    
 
 
 # Funções com um/dois underline(s) antes do nome são consideradas 
