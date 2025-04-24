@@ -1,5 +1,5 @@
 import questionary
-from src.repositorios import cliente_repositorio
+from src.Repositorios import cliente_repositorio
 
 def executar_cliente():
     opcoes = ["Listar todos", "Cadastrar", "Editar", "Apagar", "Voltar"]   
